@@ -60,6 +60,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { NavAdminComponent } from './nav/nav-admin/nav-admin.component';
 import { NavCompanyComponent } from './nav/nav-company/nav-company.component';
 import { NavCommonComponent } from './nav/nav-common/nav-common.component';
+import { NavUserComponent } from './nav/nav-user/nav-user.component';
+import { UserProfileComponent } from './components/user-components/user-profile/user-profile.component';
+import { UserJobAppliedComponent } from './components/user-components/user-job-applied/user-job-applied.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +100,10 @@ import { NavCommonComponent } from './nav/nav-common/nav-common.component';
     UserStudentComponent,
     NavAdminComponent,
     NavCompanyComponent,
-    NavCommonComponent
+    NavCommonComponent,
+    NavUserComponent,
+    UserProfileComponent,
+    UserJobAppliedComponent
   ],
   imports: [
     BrowserModule,

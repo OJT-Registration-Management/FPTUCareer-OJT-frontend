@@ -48,32 +48,50 @@ import { AdminTablesComponent } from "./components/admin-components/admin-tables
 
 // student
 import { UserStudentComponent } from "./components/user-components/user-student/user-student.component";
+import { UserProfileComponent } from "./components/user-components/user-profile/user-profile.component";
+import { UserJobAppliedComponent } from "./components/user-components/user-job-applied/user-job-applied.component";
 
 const routes: Routes = [
 
-  //login cho cả 3 role & register chỉ dùng cho company account
+  //login cho cả 3 role
   { path: "login", component: UserLoginComponent },
-  { path: "company/register", component: UserCompanyRegisterComponent },
 
+  //admin role
   {
     path: 'admin',
     component: AdminComponent,
     children: [
-      { path: 'dashboard', component: AdminDashboardComponent },
-      { path: 'tables', component: AdminTablesComponent },
+      { path: "company-manage", component: CompanyManageComponent },
       { path: "company-add", component: CompanyAddComponent },
-      { path: "job-add", component: JobAddComponent },
-      { path: "job-manage", component: JobManageComponent},
-      { path: "job-candidates", component: JobCandidatesComponent},
-      { path: "resume-list", component: ResumeListComponent },
+
     ],
   },
-
-  { path : 'student',
+  { path: 'dashboard', component: AdminDashboardComponent },
+  //student role
+  {
+    path: 'student',
     component: UserStudentComponent,
     children: [
-    ]
+      { path: "job-apply", component: JobApplyComponent },
+      { path: "user-job-applied", component: UserJobAppliedComponent },
+      { path: "user-profile", component: UserProfileComponent },
+    ],
   },
+  //company role
+  {
+    path: "company",
+    component: CompanyComponent,
+    children: [
+      { path: "job-manage", component: JobManageComponent },
+      { path: "job-add", component: JobAddComponent },
+      { path: "resume-manage", component: ResumeManageComponent },
+
+    ],
+  },
+  { path: "company-dashboard", component: CompanyDashboardComponent },
+
+  //admin component
+  { path: 'tables', component: AdminTablesComponent },
 
 
   // mấy file chính để ql mấy dạt ở dưới
@@ -82,38 +100,20 @@ const routes: Routes = [
   { path: "company", component: CompanyComponent },
   { path: "pages", component: PagesComponent },
 
-  //tổng hợp liên quan đến job và chưa chia role
+  // non-auth page
+  { path: "company-list", component: CompanyListComponent },
+  { path: "company-detail", component: CompanyDetailComponent },
   { path: "job-list", component: JobListComponent },
   { path: "job-detail", component: JobDetailComponent },
-  { path: "job-apply", component: JobApplyComponent },
-
-  //cái này về cv, duyệt cv, up cv, rồi manage nói chung á
-
+  { path: "resume-list", component: ResumeListComponent },
   { path: "resume-detail", component: ResumeDetailComponent },
   { path: "resume-add", component: ResumeAddComponent },
-  { path: "resume-manage", component: ResumeManageComponent },
-
-  //ab company, manage duyệt company đồ đó đủ hết chưa role
-  {
-    path: "company",
-    component: CompanyComponent,
-    children: [
-      { path: "company-detail", component: CompanyDetailComponent },
-      { path: "company-manage", component: CompanyManageComponent },
-      { path: "company-dashboard", component: CompanyDashboardComponent },
-    ],
-  },
-
-  // no auth page
-  { path: "company-list", component: CompanyListComponent },
-
-  //page phụ/ phần about us chắc là lấy thông tin của team mình
   { path: "page-blog", component: PageBlogComponent },
   { path: "page-post", component: PagePostComponent },
+  { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "faq", component: FaqComponent },
 
-  { path: "home", component: HomeComponent },
   // Last choice !
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
