@@ -47,7 +47,6 @@ import { FaqComponent } from './components/faq/faq.component';
 import { UserStudentComponent } from './components/user-components/user-student/user-student.component';
 
 //nav, footer
-import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component'
 
 //admin
@@ -57,6 +56,10 @@ import { AdminTablesComponent } from './components/admin-components/admin-tables
 import { CompanyDashboardComponent } from './components/company-components/company-dashboard/company-dashboard.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+
+import { NavAdminComponent } from './nav/nav-admin/nav-admin.component';
+import { NavCompanyComponent } from './nav/nav-company/nav-company.component';
+import { NavCommonComponent } from './nav/nav-common/nav-common.component';
 
 @NgModule({
   declarations: [
@@ -86,13 +89,15 @@ import { HttpClientModule } from "@angular/common/http";
     UserLoginComponent,
     UserCompanyRegisterComponent,
     JobCandidatesComponent,
-    NavComponent,
     FooterComponent,
     AdminComponent,
     AdminDashboardComponent,
     AdminTablesComponent,
     CompanyDashboardComponent,
-    UserStudentComponent
+    UserStudentComponent,
+    NavAdminComponent,
+    NavCompanyComponent,
+    NavCommonComponent
   ],
   imports: [
     BrowserModule,
