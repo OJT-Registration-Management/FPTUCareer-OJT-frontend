@@ -5,10 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav.component.html',
 })
 export class NavComponent implements OnInit {
-
+  model: any = {};
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    console.log(this.model);
   }
 
 }
