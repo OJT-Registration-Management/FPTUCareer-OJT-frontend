@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/_services/admin.service';
 
 @Component({
   selector: 'app-company-manage',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyManageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AdminService) { }
+
+  CompanyList: any = [];
 
   ngOnInit(): void {
+    this.refreshCompanyList();
+  }
+
+  refreshCompanyList() {
+    this.service.getCompanyList().subscribe(data => {
+      this.CompanyList = data;
+    });
   }
 
 }

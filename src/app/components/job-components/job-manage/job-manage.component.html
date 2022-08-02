@@ -186,6 +186,31 @@
           </div>
         </div>
         <!-- END Job detail -->
+
+        <!-- show table here-->
+        <div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Job Name</th>
+                <th>Company</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of JobList">
+                <td>{{data.jobName}}</td>
+                <td>{{data.companyId}}</td>
+                <td>{{data.jobDescription}}</td>
+                <td>{{data.status}}</td>
+                <td><button type="button">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
   </section>
