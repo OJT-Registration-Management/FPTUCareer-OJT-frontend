@@ -61,20 +61,16 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     children: [
-      { path: "company-manage", component: CompanyManageComponent },
-      { path: "company-add", component: CompanyAddComponent },
+
 
     ],
   },
-  { path: 'dashboard', component: AdminDashboardComponent },
+
   //student role
   {
     path: 'student',
     component: UserStudentComponent,
     children: [
-      { path: "job-apply", component: JobApplyComponent },
-      { path: "user-job-applied", component: UserJobAppliedComponent },
-      { path: "user-profile", component: UserProfileComponent },
     ],
   },
   //company role
@@ -82,17 +78,27 @@ const routes: Routes = [
     path: "company",
     component: CompanyComponent,
     children: [
-      { path: "job-manage", component: JobManageComponent },
-      { path: "job-add", component: JobAddComponent },
-      { path: "resume-manage", component: ResumeManageComponent },
+
 
     ],
   },
-  { path: "company-dashboard", component: CompanyDashboardComponent },
+
 
   //admin component
-  { path: 'tables', component: AdminTablesComponent },
 
+
+  //gỡ rout tạm thời
+  { path: "job-apply", component: JobApplyComponent },
+  { path: "user-job-applied", component: UserJobAppliedComponent },
+  { path: "user-profile", component: UserProfileComponent },
+  { path: "job-manage", component: JobManageComponent },
+  { path: "job-add", component: JobAddComponent },
+  { path: "resume-manage", component: ResumeManageComponent },
+  { path: 'tables', component: AdminTablesComponent },
+  { path: "company-dashboard", component: CompanyDashboardComponent },
+  { path: 'dashboard', component: AdminDashboardComponent },
+  { path: "company-manage", component: CompanyManageComponent },
+  { path: "company-add", component: CompanyAddComponent },
 
   // mấy file chính để ql mấy dạt ở dưới
   { path: "position", component: PositionComponent },
