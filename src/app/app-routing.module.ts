@@ -45,6 +45,8 @@ import { FaqComponent } from './components/faq/faq.component';
 import { AdminComponent } from "./components/admin-components/admin/admin.component";
 import { AdminDashboardComponent } from "./components/admin-components/admin-dashboard/admin-dashboard.component";
 import { AdminTablesComponent } from "./components/admin-components/admin-tables/admin-tables.component";
+import { AdminSemestersComponent } from './components/admin-components/admin-semesters/admin-semesters.component';
+import { AddSemestersComponent } from './components/admin-components/admin-semesters/add-semesters/add-semesters.component';
 
 // student
 import { UserStudentComponent } from "./components/user-components/user-student/user-student.component";
@@ -99,6 +101,9 @@ const routes: Routes = [
   { path: 'dashboard', component: AdminDashboardComponent },
   { path: "company-manage", component: CompanyManageComponent },
   { path: "company-add", component: CompanyAddComponent },
+  { path: "semester-list", component: AdminSemestersComponent },
+  { path: "add-semester", component: AddSemestersComponent },
+
 
   // mấy file chính để ql mấy dạt ở dưới
   { path: "position", component: PositionComponent },
