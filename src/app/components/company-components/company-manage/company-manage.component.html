@@ -101,6 +101,30 @@
         </div>
         <!-- END Company item -->
 
+        <!-- show table here-->
+        <div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Description</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of CompanyList">
+                <td>{{data.companyName}}</td>
+                <td>{{data.description}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.companyEmail}}</td>
+                <td><button type="button">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <!-- Company item -->
         <div class="col-xs-12">
           <div class="item-block">

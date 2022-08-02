@@ -92,6 +92,26 @@
         </div>
         <!-- END Company item -->
 
+        <!-- show table here-->
+        <div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Semester Id</th>
+                <th>Semester Name</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of SemesterList">
+                <td>{{data.semesterId}}</td>
+                <td>{{data.semesterName}}</td>
+                <td><button type="button">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <!-- Company item -->
         <div class="col-xs-12">
           <div class="item-block">
